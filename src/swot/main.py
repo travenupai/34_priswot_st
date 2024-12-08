@@ -1,6 +1,8 @@
-#main.py
 #!/usr/bin/env python
 import sys
+import warnings
+from dotenv import load_dotenv
+load_dotenv()
 from swot.crew import SwotCrew
 
 

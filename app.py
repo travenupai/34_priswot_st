@@ -1,20 +1,10 @@
 # app.py
-
 import os
 import sys
-
-# Importando o pysqlite3 antes de crewai
-import pysqlite3
-sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
-
-os.environ["CHROMA_DB_IMPL"] = "duckdb"
-
-
-
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from src.swot.crew import SwotCrew
 import streamlit as st
-
-
 from io import BytesIO
 from zipfile import ZipFile
 from docx import Document
