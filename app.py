@@ -1,6 +1,7 @@
 # app.py
 
 import os
+os.environ["CHROMA_DB_IMPL"] = "duckdb"
 from src.swot.crew import SwotCrew
 import streamlit as st
 from io import BytesIO
