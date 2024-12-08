@@ -1,7 +1,7 @@
 # app.py
 import os
 import sys
-__import__('pysqlite3')
+#__import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from src.swot.crew import SwotCrew
 import streamlit as st
