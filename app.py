@@ -2,14 +2,10 @@
 
 import os
 import sys
-# Definir backend do Chroma antes da importação
+
 os.environ["CHROMA_DB_IMPL"] = "duckdb"
 
-# Tente instalar pysqlite3-binary com versão que suporte >=3.35.0 no requirements
-# Exemplo no requirements.txt:
-# pysqlite3-binary==0.5.0
-
-# Substituir o sqlite3 pelo pysqlite3 antes de importar crewai
+# Importando o pysqlite3 antes de crewai
 import pysqlite3
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
@@ -17,7 +13,6 @@ from src.swot.crew import SwotCrew
 import streamlit as st
 
 
-os.environ["CHROMA_DB_IMPL"] = "duckdb"
 from io import BytesIO
 from zipfile import ZipFile
 from docx import Document
