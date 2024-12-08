@@ -3,13 +3,15 @@ name = "swot"
 version = "0.1.0"
 description = "swot using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
-requires-python = ">=3.10,<=3.13"
+requires-python = ">=3.11,<3.12"
 dependencies = [
-    "crewai-tools>=0.17.0",
-    "crewai[tools]>=0.86.0,<1.0.0",
-    "pydantic>=2.10.3",
-    "python-docx>=1.1.2",
-    "streamlit>=1.40.2",
+    "crewai-tools==0.12.1",
+    "crewai[tools]==0.61.0",
+    "hatch>=1.13.0",
+    "poetry>=1.8.5",
+    "streamlit==1.38.0",
+    "langchain-openai>=0.1.0",
+    "langchain-community>=0.1.0",
 ]
 
 [project.scripts]
@@ -22,3 +24,4 @@ test = "swot.main:test"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+

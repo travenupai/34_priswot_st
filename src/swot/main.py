@@ -22,6 +22,8 @@ def run():
     # Iniciar a tripulação
     SwotCrew().crew().kickoff(inputs=inputs)
 
+
+
 def train():
     """
     Train the crew for a given number of iterations.
