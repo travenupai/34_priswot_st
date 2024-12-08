@@ -30,7 +30,7 @@ gpt_o1_mini           = ChatOpenAI(model_name="o1-mini", openai_api_key=api_key)
 # Initialize tools
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-scrape_element_tool = ScrapeElementFromWebsiteTool()
+
 
 @CrewBase
 class SwotCrew():
@@ -40,7 +40,7 @@ class SwotCrew():
 	def agente_extracao(self) -> Agent:
 		return Agent(
 			config=self.agents_config['agente_extracao'],
-			tools=[search_tool], # Example of custom tool, loaded on the beginning of file
+			tools=[SerperDevTool(), ScrapeWebsiteTool() ], # Example of custom tool, loaded on the beginning of file
 			verbose=True,
 			allow_delegation=True,
             allow_interruption=True,
@@ -53,7 +53,7 @@ class SwotCrew():
 	def agente_solucoes_ia(self) -> Agent:
 		return Agent(
 			config=self.agents_config['agente_solucoes_ia'],
-			tools=[scrape_tool],
+			tools=[SerperDevTool(), ScrapeWebsiteTool() ],
 			verbose=True,
 			allow_delegation=True,
             allow_interruption=True,
@@ -66,7 +66,7 @@ class SwotCrew():
 	def analista_swot(self) -> Agent:
 		return Agent(
 			config=self.agents_config['analista_swot'],
-			tools=[scrape_tool],
+			tools=[SerperDevTool(), ScrapeWebsiteTool() ],
 			verbose=True,
 			allow_delegation=True,
             allow_interruption=True,
@@ -79,7 +79,7 @@ class SwotCrew():
 	def analista_financiamento(self) -> Agent:
 		return Agent(
 			config=self.agents_config['analista_financiamento'],
-			tools=[scrape_tool],
+			tools=[SerperDevTool(), ScrapeWebsiteTool() ],
 			verbose=True,
 			allow_delegation=True,
             allow_interruption=True,
